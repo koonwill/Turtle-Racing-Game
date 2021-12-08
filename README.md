@@ -72,6 +72,10 @@ This program consists of three classes.
 * `Player_Account` : Represent the name in name_list and make a bet with turtle colour
 * `Game` : Used for create all the graphical and method of the game.
 
+🍻UML Class Diagram of this project🍻
+
+![UML Class Diagram](pic/UML_Class_TurtleRacingGame.png)
+
 ---
 
 ## 🍻Code Structure🍻
