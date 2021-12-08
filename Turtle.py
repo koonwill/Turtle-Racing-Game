@@ -5,11 +5,11 @@ from database import Database
 from Player_Account import Player_Account
 
 WIDTH, HEIGHT = 500, 500
-COLORS = ['red', 'green', 'blue', 'brown', 'pink', 'black']
+COLORS = ['red', 'green', 'blue', 'purple', 'pink', 'black']
 
 
 class Game:
-    def __init__(self, name_list) -> None:
+    def __init__(self, name_list: list[str]):
         "Initialize"
         self.screen = turtle.Screen()
         self.database = Database()
@@ -41,7 +41,7 @@ class Game:
         self.screen.setup(WIDTH, HEIGHT)
         self.screen.title('Turtle Racing!!')
 
-    def race(self, colors):
+    def race(self, colors: list[str]):
         '''Let the race begin then return the winner'''
         self.create_turtle(colors)
         for player in self.player_list:
@@ -53,7 +53,7 @@ class Game:
             for racer in self.turtle_list:
                 distance = random.randrange(1, 20)
                 racer.forward(distance)
-                if racer.ycor() >= HEIGHT // 2 - 10: #check the winner
+                if racer.ycor() >= HEIGHT // 2 - 10:  # check the winner
                     winner = colors[self.turtle_list.index(racer)]
 
                     for player in self.player_list:
@@ -70,7 +70,7 @@ class Game:
 
                     return
 
-    def create_turtle(self, colors):
+    def create_turtle(self, colors: list[str]):
         '''Line a turtle at the start with spacing then append list of racer'''
         spacing_x_axis = WIDTH // (len(colors) + 1)
 
@@ -132,7 +132,7 @@ def main():
             name_list = []
             while True:
                 print(f'now all player are: {name_list}')
-                name = input('Enter name and press enter to start: ')
+                name = input('Enter name and press enter to start: ').capitalize()
                 if name.lower() == '':
                     if name_list:
                         break
@@ -148,6 +148,7 @@ def main():
 
         elif select_choice == '3':  # show leader board
             data = Database()
+            print(f'*** Leaderboard ***')
             print(f'name       score')
             for name, win in data.record():
                 print(f'{name:<5} {win:>9}')

@@ -1,6 +1,7 @@
 import csv
 from operator import itemgetter
 
+
 class Database:
 
     def __init__(self):
@@ -20,7 +21,7 @@ class Database:
             for data in self.data:
                 write_file.writerow(data)
 
-    def save(self, name, win):
+    def save(self, name: str, win: int):
         """saving the progress of playing"""
         for data in self.data:
             if data['name'] == name:
@@ -29,7 +30,7 @@ class Database:
 
         print('Save.')
 
-    def load(self, name):
+    def load(self, name: str):
         """loading the info of player but if not have it will create a new one"""
         with open('data.csv', 'r') as save_file:
             save = csv.DictReader(save_file)
@@ -44,23 +45,12 @@ class Database:
                 self.data.append(new_data)
                 return new_data
 
-    def update_score(self, name,amount):
+    def update_score(self, name: str, amount: int):
         "update the score"
         record_data = self.load(name)
-        self.save(name,record_data['win']+amount)
-
-    def delete(self, name):
-        """Delete progress"""
-        print('Delete in progress...')
-
-        for i, data in enumerate(self.data):
-            if data['name'] == name:
-                del self.data[i]
-                self.update_data()
-
-        print('Delete Complete')
+        self.save(name, record_data['win'] + amount)
 
     def record(self):
+        """"make a list of tuple then sorted list by descending of wincount """
         record_data = {data['name']: int(data['win']) for data in self.data}
-
         return sorted(record_data.items(), key=itemgetter(1), reverse=True)
