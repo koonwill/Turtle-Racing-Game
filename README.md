@@ -7,9 +7,9 @@ So why don't we drink it instead 🍻.
 ---
 
 ## 🍻 Overview and Features🍻
-![lobby](pic/Lobby.png)
-
 This program includes four menu which user can choose.
+
+![lobby](pic/Lobby.png)
 
 ### 🍻Rule🍻
 If user selected rule it will show rule of this game
