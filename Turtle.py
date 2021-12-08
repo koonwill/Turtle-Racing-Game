@@ -142,15 +142,15 @@ def main():
                 name_list.append(name)
             start = Game(name_list)  # insert namelist
             start.play_one_game()  # let race
-            start.screen.bye()
+            start.screen.clear()
 
         elif select_choice == '2':  # showrule
             Game.show_rule()
 
         elif select_choice == '3':  # show leader board
             data = Database()
-            print(f'*** Leaderboard ***')
-            print(f'name       score')
+            print('*** Leaderboard ***')
+            print('name       score')
             for name, win in data.record():
                 print(f'{name:<5} {win:>9}')
             print()
