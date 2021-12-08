@@ -13,6 +13,7 @@ This program includes four menu which user can choose.
 
 ### 🍻Rule🍻
 If user selected rule it will show rule of this game
+
 ![Rule](pic/Showrule.png)
 
 ### 🍻Play🍻
