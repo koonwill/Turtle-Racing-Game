@@ -20,6 +20,20 @@ After user select play the program will be like this which require user to inser
 
 ![Morethanonename](pic/EnterMoreThanOneName.png)
 
+After user pressing enter the program will require user to select how many racer the user want.
 
+![Racer](pic/SelectNumRacer.png)
 
+Then user need to pick a turtle colour to make a bet and the race will begin.
+
+![Bet](pic/Game1.png)
+
+After that the program will report
+
+![Report](pic/Game2.png)
+
+But!! if the player lucky enough the special round will come up 
+in report and random amount of the cup that player need to drink.
+
+![Report1](pic/)
 

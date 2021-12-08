@@ -9,7 +9,7 @@ COLORS = ['red', 'green', 'blue', 'purple', 'pink', 'black']
 
 
 class Game:
-    def __init__(self, name_list: list[str]):
+    def __init__(self, name_list):
         "Initialize"
         self.screen = turtle.Screen()
         self.database = Database()
@@ -41,7 +41,7 @@ class Game:
         self.screen.setup(WIDTH, HEIGHT)
         self.screen.title('Turtle Racing!!')
 
-    def race(self, colors: list[str]):
+    def race(self, colors):
         '''Let the race begin then return the winner'''
         self.create_turtle(colors)
         for player in self.player_list:
@@ -70,7 +70,7 @@ class Game:
 
                     return
 
-    def create_turtle(self, colors: list[str]):
+    def create_turtle(self, colors):
         '''Line a turtle at the start with spacing then append list of racer'''
         spacing_x_axis = WIDTH // (len(colors) + 1)
 
@@ -89,7 +89,8 @@ class Game:
         """This is special round that will randomly come
         which random multiply the amount of cup we need to drinks"""
         chance = random.randint(1, 1000)
-        return random.randint(2, 5) if chance in [7, 77, 777] else 1
+        num_list = [1, 11, 111, 3, 33, 333, 5, 55, 555, 7, 77, 777, 9, 99, 999]
+        return random.randint(2, 5) if chance in num_list else 1
 
     @staticmethod
     def show_rule():
