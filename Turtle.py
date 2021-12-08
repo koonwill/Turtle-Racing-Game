@@ -88,9 +88,8 @@ class Game:
     def special_round(self):
         """This is special round that will randomly come
         which random multiply the amount of cup we need to drinks"""
-        chance = random.randint(1, 1000)
-        num_list = [1, 11, 111, 3, 33, 333, 5, 55, 555, 7, 77, 777, 9, 99, 999]
-        return random.randint(2, 5) if chance in num_list else 1
+        chance = random.randint(1, 10)
+        return random.randint(2, 5) if chance in [3, 5, 7] else 1
 
     @staticmethod
     def show_rule():
@@ -100,13 +99,15 @@ class Game:
         print('*** So we highly recommend player to get the drinks ready.                ***')
         print('*****************************************************************************')
         print('Firstly, this game need player to select how many racer(turtle) player want.')
-        print('After that the game will need player to select the racer by their color to make a bet')
-        print('then the race will start and the player who lose the bet need to drink one cup.')
-        print('But we thinks one cup is too easy so if player is very lucky the special round will appear')
-        print('after the race end and the amount of cup that player need to drink will increase')
+        print('After that program require player make a bet by turtle colour then the race')
+        print('will start and the player who lose the bet need to drink one cup.')
+        print('')
+        print('But for our beloved user one cup is too easy so we add the special round')
+        print('which show up with the report win/lost and the one who lost in special')
+        print('round will have to drinks more which randomly increase.')
         print('')
         print('Have fun ;)')
-        print('')
+        print('*****************************************************************************')
 
     def play_one_game(self):
         "Run one game"
